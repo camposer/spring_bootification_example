@@ -1,18 +1,7 @@
 package com.websystique.springmvc.service;
 
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Matchers.anyInt;
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.verify;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.mockito.Mockito.when;
-
+import com.websystique.springmvc.dao.EmployeeDao;
+import com.websystique.springmvc.model.Employee;
 import org.joda.time.LocalDate;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -22,8 +11,14 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.websystique.springmvc.dao.EmployeeDao;
-import com.websystique.springmvc.model.Employee;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.*;
 
 public class EmployeeServiceImplTest {
 
@@ -52,7 +47,7 @@ public class EmployeeServiceImplTest {
 	@Test
 	public void saveEmployee(){
 		doNothing().when(dao).saveEmployee(any(Employee.class));
-		employeeService.saveEmployee(any(Employee.class));
+		employeeService.saveEmployee(new Employee());
 		verify(dao, atLeastOnce()).saveEmployee(any(Employee.class));
 	}
 	

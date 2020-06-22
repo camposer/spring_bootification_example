@@ -9,7 +9,17 @@ A branch is created for each step of the process and then rebased into the main 
 2. Build
 3. Run
 
-## 1. Compile
+## Disclaimer
+
+This example assumes the codebase has an important level of tests maturity. Tests can/should be improved before bootification or during the process.
+
+## Spring Bootification Steps
+
+### 0. Prepare
+
+A step zero was executed in order to make the original application run with jdk12, maven3.6 on a MaCOS.
+
+### 1. Compile
 
 North star: Make the project compile. You should be able to successfully execute: `mvn compile test-compile`.
 
@@ -19,7 +29,7 @@ North star: Make the project compile. You should be able to successfully execute
 - Include new dependencies one by one, ideally upgrading old dependencies
 - Replace dependencies to old classes by new ones (e.g. hibernate4)
 
-## 2. Build
+### 2. Build
 
 North star: Make the project build. You should be able to successfully execute: `mvn package`.
 
@@ -31,7 +41,7 @@ North star: Make the project build. You should be able to successfully execute: 
   - Modify the main Spring Boot class accordingly 
   - TODO: add comments here
 
-## 3. Run & Validate
+### 3. Run & Validate
 
 North star: Make the project build. You should be able to successfully execute: `java -jar file.jar` and hit key endpoints
 

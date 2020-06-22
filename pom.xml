@@ -20,6 +20,7 @@
 		<joda-time.version>2.10.6</joda-time.version>
 		<testng.version>7.1.0</testng.version>
 		<dbunit.version>2.7.0</dbunit.version>
+		<h2.version>1.4.200</h2.version>
 	</properties>
 
 	<dependencies>
@@ -50,8 +51,12 @@
 			<artifactId>joda-time</artifactId>
 			<version>${joda-time.version}</version>
 		</dependency>
-		
-		
+		<dependency>
+			<groupId>org.jadira.usertype</groupId>
+			<artifactId>usertype.core</artifactId>
+			<version>7.0.0.CR1</version>
+		</dependency>
+
 		<!-- Testing dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -70,6 +75,13 @@
 			<version>${testng.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
