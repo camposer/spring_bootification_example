@@ -42,3 +42,26 @@ North star: Make the project build. You should be able to successfully execute: 
 - Improve tests
 
 **Rinse and repeat**
+
+## Database configuration
+
+The project uses mysql 5. This can be changed later, but I'll keep that config for now.
+
+In order to start a mysql:5 server enter:
+
+```bash
+docker run -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d -p 3306:3306 mysql:5
+```
+
+In order to connect to the database enter:
+
+```bash
+docker run -it --net="host" --rm mysql:5 mysql -h 127.0.0.1 -u root -p
+```
+
+In order to execute the project, you'll have to create some objects in DB:
+
+```bash
+docker run -it --net="host" --rm mysql:5 mysql -h 127.0.0.1 -u root -e "CREATE DATABASE websystique"
+cat websystique.sql | docker run -i --net="host" --rm mysql:5 mysql -h 127.0.0.1 -u root websystique
+```
