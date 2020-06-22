@@ -37,9 +37,10 @@ North star: Make the project build. You should be able to successfully execute: 
 - Change testing annotations when needed
 - Use Dirties Contexts when needed
 - Create a simple main Spring Boot class (@SpringBootApplication) 
-- Add -at least- one Smoke Test that allows you to validate the Spring Context loading
+- Add -at least- one Smoke Test that allows you to validate the Spring Context loading and one important endoiint
   - Modify the main Spring Boot class accordingly 
-  - TODO: add comments here
+  - Copy smoke test config into Spring Boot main class
+  - TODO: Add more info here
 
 ### 3. Run & Validate
 
