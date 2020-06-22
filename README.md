@@ -16,7 +16,8 @@ North star: Make the project compile. You should be able to successfully execute
 - Focus on POM
 - Comment out old dependencies
 - Replace group of spring annotations by spring boot starters, e.g. spring-jdbc by spring-boot-starter-jdbc
-- Include new dependencies one by one, ideally upgrading old dependencies. 
+- Include new dependencies one by one, ideally upgrading old dependencies
+- Replace dependencies to old classes by new ones (e.g. hibernate4)
 
 ## 2. Build
 
