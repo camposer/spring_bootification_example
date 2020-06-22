@@ -11,7 +11,7 @@ A branch is created for each step of the process and then rebased into the main 
 
 ## 1. Compile
 
-North star: Make the project compile. You should be able to successfully execute: `mvn compile`.
+North star: Make the project compile. You should be able to successfully execute: `mvn compile test-compile`.
 
 - Focus on POM
 - Comment out old dependencies
