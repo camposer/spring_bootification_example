@@ -1,13 +1,9 @@
 package com.websystique.springmvc.dao;
 
-import java.util.List;
-
-import org.hibernate.Criteria;
-import org.hibernate.Query;
-import org.hibernate.criterion.Restrictions;
+import com.websystique.springmvc.model.Employee;
 import org.springframework.stereotype.Repository;
 
-import com.websystique.springmvc.model.Employee;
+import java.util.List;
 
 @Repository("employeeDao")
 public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements EmployeeDao {
@@ -21,20 +17,19 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
 	}
 
 	public void deleteEmployeeBySsn(String ssn) {
-		Query query = getSession().createSQLQuery("delete from EMPLOYEE where ssn = :ssn");
-		query.setString("ssn", ssn);
-		query.executeUpdate();
+		entityManager.createQuery("delete from Employee e where e.ssn = :ssn")
+				.setParameter("ssn", ssn)
+				.executeUpdate();
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Employee> findAllEmployees() {
-		Criteria criteria = createEntityCriteria();
-		return (List<Employee>) criteria.list();
+		return entityManager.createQuery("from Employee e", Employee.class).getResultList();
 	}
 
 	public Employee findEmployeeBySsn(String ssn) {
-		Criteria criteria = createEntityCriteria();
-		criteria.add(Restrictions.eq("ssn", ssn));
-		return (Employee) criteria.uniqueResult();
+		List<Employee> employees = entityManager.createQuery("from Employee e where e.ssn = :ssn", Employee.class).setParameter("ssn", ssn).getResultList();
+		if (employees.isEmpty()) return null;
+		return employees.get(0);
 	}
 }

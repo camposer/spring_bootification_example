@@ -9,6 +9,7 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	<packaging>war</packaging>
 	<groupId>com.websystique.springmvc</groupId>
 	<artifactId>spring_bootification_example</artifactId>
 	<version>1.0.0</version>
@@ -49,7 +50,7 @@
 			<version>${mysql.version}</version>
 		</dependency>
 
-      	<!-- Joda-Time -->
+		<!-- Joda-Time -->
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>

@@ -8,10 +8,13 @@ A branch is created for each step of the process and then rebased into the main 
 1. Compile
 2. Build
 3. Run
+4. Modernise (optional)
 
 ## Disclaimer
 
 This example assumes the codebase has an important level of tests maturity. Tests can/should be improved before bootification or during the process.
+
+- Remove custom unneeded Spring custom config (e.g. database)
 
 ## Spring Bootification Steps
 
@@ -44,7 +47,7 @@ North star: Make the project build. You should be able to successfully execute: 
 
 ### 3. Run & Validate
 
-North star: Make the project build. You should be able to successfully execute: `java -jar file.jar` and hit key endpoints
+North star: Run the project. You should be able to successfully execute: `java -jar file.jar` and hit key endpoints
 
 - Focus on Execution and Endpoints
 - Add actuators to your classpath 
@@ -52,6 +55,14 @@ North star: Make the project build. You should be able to successfully execute: 
 - Check endpoints
 - Run e2e test harness
 - Improve tests
+
+### 4. Modernise
+
+North star: Make the project full spring-boot and follow cloud native patterns. Of course, there's not "a way" of doing this, 
+there are different approaches and levels of compliance with a 12-factor app.
+
+- Use smoke tests and actuator/health for validating state
+- Remove custom not needed Spring configurations
 
 **Rinse and repeat**
 

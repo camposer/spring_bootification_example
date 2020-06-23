@@ -1,17 +1,17 @@
 package com.websystique.springmvc.dao;
 
-import java.math.BigDecimal;
-
+import com.websystique.springmvc.model.Employee;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSet;
 import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.websystique.springmvc.model.Employee;
+import java.math.BigDecimal;
 
-
+@SpringBootTest
 public class EmployeeDaoImplTest extends EntityDaoImplTest{
 
 	@Autowired
