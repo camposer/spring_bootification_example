@@ -20,7 +20,7 @@
 		<mysql.version>8.0.20</mysql.version>
 		<joda-time.version>2.10.6</joda-time.version>
 		<usertype.version>7.0.0.CR1</usertype.version>
-		<testng.version>7.1.0</testng.version>
+		<testng.version>7.5.1</testng.version>
 		<dbunit.version>2.7.0</dbunit.version>
 	</properties>
 
